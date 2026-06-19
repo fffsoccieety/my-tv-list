@@ -1,0 +1,51 @@
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Forces mobile layout into exactly 2 columns */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+/* Card framing */
+.card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    aspect-ratio: 2 / 3; /* Matches standard movie poster shapes */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* The red corner badges seen in your screenshot */
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #e50914;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-bottom-left-radius: 6px;
+}
+
+/* Keeps things looking organized on larger desktop screens */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
