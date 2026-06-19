@@ -1,53 +1,41 @@
 body {
-    background-color: #121212;
+    background-color: #181a1b; /* His exact dark background color */
     margin: 0;
-    padding: 12px;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Forces mobile layout into exactly 2 columns */
+/* Forces mobile layout into his exact fluid, tightly-packed spacing */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto)); /* His exact fluid card math */
+    justify-content: center;
+    gap: 3px;         /* His exact distance between cards */
+    max-width: 1300px; /* His exact maximum layout width for large screens */
+    margin: 0 auto;    /* Centers the entire grid wall on the screen */
+    padding: 0 4px;    /* The tiny left/right outer buffer seen in his screenshot */
 }
 
 /* Card framing */
 .card {
     position: relative;
     overflow: hidden;
-    background-color: #1e1e1e;
-    aspect-ratio: 2 / 3; /* Matches standard movie poster shapes */
+    background-color: #2a2d2e; /* His exact gray background color used while loading */
+    aspect-ratio: 2 / 3;       /* His exact poster aspect ratio */
+    border-radius: 0;          /* Perfectly sharp edges */
 }
 
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;         /* His exact image layout rule to avoid distortion */
     display: block;
-    border-radius: 0 !important; /* The !important force-kills any other rounded rules */
-}
-
-/* The red corner badges seen in your screenshot */
-.badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #e50914;
-    color: white;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-bottom-left-radius: 6px;
+    border-radius: 0 !important; 
 }
 
 /* Keeps things looking organized on larger desktop screens */
 @media (min-width: 768px) {
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
-    justify-content: center;
-    gap: 3px;
-    margin: 0 auto;
-    padding: 0 4px; /* <--- THIS IS THE SECRET */
+    .grid-container {
+        gap: 3px;
+    }
 }
