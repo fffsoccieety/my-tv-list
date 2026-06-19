@@ -1,7 +1,7 @@
 body {
-    background-color: #121212;
+    background-color: #181a1b; /* Swapped to his exact dark shade */
     margin: 0;
-    padding: 12px;
+    padding: 0;                /* Changed to 0 so your grid stretches edge-to-edge */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -9,16 +9,17 @@ body {
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 3px;                  /* Stealed his ultra-tight 3px spacing! */
+    padding: 3px;              /* Subtle frame padding so it doesn't clip your phone screen */
 }
 
 /* Card framing */
 .card {
     position: relative;
-    border-radius: 6px;
+    border-radius: 6px;        /* Keeps your premium rounded corners */
     overflow: hidden;
-    background-color: #1e1e1e;
-    aspect-ratio: 2 / 3; /* Matches standard movie poster shapes */
+    background-color: #2a2d2e; /* Updated to his loading color background */
+    aspect-ratio: 2 / 3; 
 }
 
 .card img {
@@ -34,6 +35,22 @@ body {
     top: 0;
     right: 0;
     background-color: #e50914;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-bottom-left-radius: 6px;
+}
+
+/* Keeps things looking organized on larger desktop screens */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1000px;
+        margin: 0 auto;
+        gap: 6px;              /* Slightly bigger gaps for desktops so it scales nicely */
+    }
+}
     color: white;
     font-size: 13px;
     font-weight: bold;
