@@ -15,7 +15,6 @@ body {
 /* Card framing */
 .card {
     position: relative;
-    border-radius: 6px;
     overflow: hidden;
     background-color: #1e1e1e;
     aspect-ratio: 2 / 3; /* Matches standard movie poster shapes */
@@ -26,6 +25,7 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 0 !important; /* The !important force-kills any other rounded rules */
 }
 
 /* The red corner badges seen in your screenshot */
