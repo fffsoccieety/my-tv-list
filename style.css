@@ -16,7 +16,7 @@ body {
 /* Card framing */
 .card {
     position: relative;
-    border-radius: 6px;        /* Keeps your premium rounded corners */
+    border-radius: 0;        /* Keeps your premium rounded corners */
     overflow: hidden;
     background-color: #2a2d2e; /* Updated to his loading color background */
     aspect-ratio: 2 / 3; 
