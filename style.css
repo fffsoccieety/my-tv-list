@@ -43,9 +43,11 @@ body {
 
 /* Keeps things looking organized on larger desktop screens */
 @media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    justify-content: center;
+    gap: 3px;
+    margin: 0 auto;
+    padding: 0 4px; /* <--- THIS IS THE SECRET */
 }
