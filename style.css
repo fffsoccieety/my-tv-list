@@ -1,51 +1,36 @@
+/* 1. Base Setup */
 body {
-    background-color: #121212;
-    margin: 0;
-    padding: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #181a1b;
+  margin: 0;
+  padding: 0;
 }
 
-/* Forces mobile layout into exactly 2 columns */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+/* 2. The Core Grid Layout (His exact measurements) */
+.posters {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+  justify-content: center;
+  gap: 3px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* Card framing */
-.card {
-    position: relative;
-    border-radius: 0px;
-    overflow: hidden;
-    background-color: #1e1e1e;
-    aspect-ratio: 2 / 3; /* Matches standard movie poster shapes */
+/* 3. The Poster Cards */
+.poster {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2/3;
+  background-color: #2a2d2e;
 }
 
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+/* 4. The Poster Images */
+.poster__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Added to keep images crisp without his Angular variables */
 }
 
-/* The red corner badges seen in your screenshot */
-.badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #e50914;
-    color: white;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 4px 8px;
-    border-bottom-left-radius: 6px;
-}
-
-/* Keeps things looking organized on larger desktop screens */
-@media (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+/* 5. Utility class used for hover interactions */
+.pointer {
+  cursor: pointer;
 }
