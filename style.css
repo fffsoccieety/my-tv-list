@@ -1,38 +1,35 @@
 body {
-    background-color: #181a1b; /* His exact dark background */
+    background-color: #181a1b;
     margin: 0;
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Forces mobile layout into exactly 2 columns with a tight 3px gap */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Back to perfect 2 columns */
-    gap: 3px;         /* His exact tight spacing */
-    padding: 0 4px;    /* The tiny left/right outer buffer he has */
-    max-width: 1300px; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+    padding: 0 4px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
-/* Card framing */
 .card {
     position: relative;
     overflow: hidden;
-    background-color: #2a2d2e; /* His gray loading background */
-    aspect-ratio: 2 / 3;       /* Locks posters into the perfect movie shape */
-    border-radius: 0;          /* Sharp edges */
+    background-color: #2a2d2e;
+    aspect-ratio: 2 / 3;
+    border-radius: 0;
 }
 
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;         /* Crucial: keeps images crisp and stops them from stretching out the grid */
+    object-fit: cover;
     display: block;
-    border-radius: 0 !important; 
+    border-radius: 0 !important;
 }
 
-/* Desktop layout rules */
 @media (min-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(4, 1fr);
