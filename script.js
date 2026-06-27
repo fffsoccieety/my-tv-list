@@ -6,5 +6,8 @@ fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=Mr%20Robo
     console.log(data);
 
     const poster = data.results[0].poster_path;
-    console.log("https://image.tmdb.org/t/p/w500" + poster);
-  });
+    const posterURL = "https://image.tmdb.org/t/p/w500" + poster;
+
+    console.log(posterURL);
+  })
+  .catch(error => console.error(error));
