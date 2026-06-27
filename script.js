@@ -27,12 +27,18 @@ shows.forEach(show => {
     .then(data => {
       if (!data.results.length) return;
 
-      const poster = "https://image.tmdb.org/t/p/w500" + data.results[0].poster_path;
+      const poster = `https://image.tmdb.org/t/p/original${data.results[0].poster_path}`;
 
-      grid.innerHTML += `
-        <div class="card">
-          <img src="${poster}" alt="${show}">
-        </div>
-      `;
-    });
+      const card = document.createElement("div");
+      card.className = "card";
+
+      const img = document.createElement("img");
+      img.src = poster;
+      img.alt = show;
+
+      card.appendChild(img);
+      grid.appendChild(card);
+    })
+    .catch(error => console.error(error));
+});    });
 });
